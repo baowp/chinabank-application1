@@ -31,7 +31,7 @@
     </bean>
 
     <!-- enable component scanning and autowire (beware that this does not enable mapper scanning!) -->    
-    <context:component-scan base-package="cn.com.chinabank.application1.service" />
+    <context:component-scan base-package="cn.com.chinabank.app1.service" />
 
     <!-- enable transaction demarcation with annotations -->
     <tx:annotation-driven />
@@ -49,5 +49,5 @@
         <property name="basePackage" value="cn.com.chinabank.application1.persistence" />
     </bean>
     
-<!-- 	<import resource="spring-dubbo.xml"/> -->
+	<import resource="spring-dubbo.xml"/>
 </beans>

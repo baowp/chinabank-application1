@@ -9,9 +9,9 @@
 
 	<!-- dubbo -->
 	<dubbo:application name="application1"/>
-	<dubbo:registry id="dubboRegistry" address="zookeeper://192.168.1.109:2181"/>
+	<dubbo:registry id="dubboRegistry" address="zookeeper://localhost:2181"/>
 	<dubbo:consumer check="false" />
 	
-	<dubbo:reference id="dubboService" interface="com.colomob.shared.application1.service.DubboSampleService" version="1.0.1"/>
+	<dubbo:service interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService" version="1.0.0"/>
 
 </beans>

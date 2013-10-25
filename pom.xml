@@ -20,6 +20,7 @@
 
 	<properties>
 		<spring.version>3.2.2.RELEASE</spring.version>
+		<chinabank.share.version>1.0.0</chinabank.share.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -37,6 +38,12 @@
 				<groupId>cn.com.chinabank.application1</groupId>
 				<artifactId>application1.web</artifactId>
 				<version>${project.version}</version>
+			</dependency>			
+			
+			<dependency>
+				<groupId>cn.com.chinabank.shared</groupId>
+				<artifactId>applications.share</artifactId>
+				<version>${chinabank.share.version}</version>
 			</dependency>
 			
 				
