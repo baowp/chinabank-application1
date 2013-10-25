@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+            http://www.springframework.org/schema/context  
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+            http://www.springframework.org/schema/mvc 
+            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+            http://www.springframework.org/schema/jdbc  
+            http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+            
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<!-- 自动搜索@Controller标注的类 -->
+	<context:component-scan base-package="cn.com.chinabank.application1.controller" />
+	<context:component-scan base-package="cn.com.chinabank.shared.controller" />
+    
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+	<!-- <context:annotation-config /> -->
+	
+ 	<!-- 处理Mutipart文件上传的bean -->  
+	<!-- <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean> -->
+	
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" /><!-- json转换器 -->
+			</list>
+		</property>
+		<property name="webBindingInitializer">
+			<!-- Configures Spring MVC DataBinder instances -->
+			<bean
+				class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+				<property name="validator" ref="validator" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+		
+	<!-- Creates the JSR-303 Validator -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+<!-- 	<mvc:interceptors> -->
+<!-- 		<bean class="cn.com.chinabank.application1.interceptor.PrepareInterceptor" /> -->
+<!-- 		<mvc:interceptor> -->
+<!-- 			<mvc:mapping path="/" /> -->
+<!-- 			<mvc:mapping path="/index" /> -->
+<!-- 			<mvc:mapping path="/master/**" /> -->
+<!-- 			<mvc:mapping path="/feedback/master/*" /> -->
+<!-- 			<bean class="cn.com.chinabank.application1.interceptor.PrivacyInterceptor" /> -->
+<!-- 		</mvc:interceptor> -->
+		<!-- <bean class="com.iteye.baowp.springrest.interceptor.ParametersInterceptor" />
+		<bean class="com.iteye.baowp.springrest.interceptor.JsonpInterceptor" /> -->
+<!-- 	</mvc:interceptors> -->
+
+	<!-- 视图查找器 -->
+	<!-- Default ViewResolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<mvc:resources location="/" mapping="/*.*"/>
+	<mvc:resources location="/" mapping="/*/*.*"/>
+	<mvc:resources location="/" mapping="/*/*/*.*"/>
+	<!-- <bean id="messageSource" -->
+	<!-- class="org.springframework.context.support.ResourceBundleMessageSource" -->
+	<!-- p:basename="i18n/messages" /> -->
+</beans>
