@@ -9,8 +9,7 @@
 
 	<!-- dubbo -->
 	<dubbo:application name="application1"/>
-	<dubbo:registry id="dubboRegistry" address="zookeeper://localhost:2181"/>
-	<dubbo:consumer check="false" />
+	<dubbo:registry id="dubboRegistry" address="zookeeper://localhost:2181?backup=localhost:3181,localhost:4181"/>
 	
 	<dubbo:service interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService" version="1.0.0"/>
 
