@@ -11,6 +11,5 @@
 	<dubbo:application name="application1"/>
 	<dubbo:registry id="dubboRegistry" address="zookeeper://localhost:2181?backup=localhost:3181,localhost:4181"/>
 	
-	<dubbo:service interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService" version="1.0.0"/>
-
+	<dubbo:annotation package="cn.com.chinabank.app1" />
 </beans>
