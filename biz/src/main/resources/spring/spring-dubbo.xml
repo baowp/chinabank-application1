@@ -9,7 +9,7 @@
 
 	<!-- dubbo -->
 	<dubbo:application name="application1"/>
-	<dubbo:registry id="dubboRegistry" address="zookeeper://localhost:2181?backup=localhost:3181,localhost:4181"/>
+	<dubbo:registry id="dubboRegistry" address="redis://localhost:6379"/>
 	
 	<dubbo:annotation package="cn.com.chinabank.app1" />
 </beans>

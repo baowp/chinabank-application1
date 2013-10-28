@@ -88,6 +88,10 @@
 			<artifactId>zookeeper</artifactId>
 		</dependency> 
 		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>     
