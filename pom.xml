@@ -21,6 +21,7 @@
 	<properties>
 		<spring.version>3.2.2.RELEASE</spring.version>
 		<chinabank.share.version>1.0.0</chinabank.share.version>
+        <chinabank.test.version>1.0.0</chinabank.test.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -45,6 +46,12 @@
 				<artifactId>applications.share</artifactId>
 				<version>${chinabank.share.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>cn.com.chinabank.shared</groupId>
+                <artifactId>applications.test</artifactId>
+                <version>${chinabank.test.version}</version>
+                <scope>test</scope>
+            </dependency>
 			
 				
 			<dependency>
@@ -55,7 +62,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>4.1.0.Final</version>
+				<version>4.3.0.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>cglib</groupId>
@@ -91,7 +98,7 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.4.2</version>
+				<version>1.6.2</version>
 			</dependency>
 		    <dependency>
 				<groupId>com.alibaba</groupId>
