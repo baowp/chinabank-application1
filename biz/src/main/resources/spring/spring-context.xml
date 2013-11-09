@@ -26,9 +26,9 @@
 	</bean>
 
     <!-- transaction manager, use JtaTransactionManager for global tx -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
-    </bean>
+    </bean> -->
 
     <!-- enable component scanning and autowire (beware that this does not enable mapper scanning!) -->    
     <context:component-scan base-package="cn.com.chinabank.app1.service" />
@@ -39,10 +39,10 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!-- define the SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="typeAliasesPackage" value="cn.com.chinabank.application1.data.model" />
-    </bean>
+    </bean> -->
 
     <!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
