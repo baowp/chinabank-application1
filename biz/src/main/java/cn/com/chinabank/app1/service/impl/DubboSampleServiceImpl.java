@@ -2,10 +2,12 @@ package cn.com.chinabank.app1.service.impl;
 
 import cn.com.chinabank.shared.dto.BookDto;
 import cn.com.chinabank.shared.service.DubboSampleService;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 
-@com.alibaba.dubbo.config.annotation.Service(version = "1.0.0")
+@com.alibaba.dubbo.config.annotation.Service(protocol = "learn2", version = "1.0.0")
+@Service("dubboSampleService")
 public class DubboSampleServiceImpl implements DubboSampleService {
 
     private final org.apache.log4j.Logger logger = org.apache.log4j.Logger
