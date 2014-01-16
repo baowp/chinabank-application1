@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 
-@com.alibaba.dubbo.config.annotation.Service(protocol = "learn2", version = "1.0.0")
+//@com.alibaba.dubbo.config.annotation.Service(protocol = "learn2", version = "1.0.0")
 @Service("dubboSampleService")
 public class DubboSampleServiceImpl implements DubboSampleService {
 
