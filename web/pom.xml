@@ -17,8 +17,8 @@
 			<artifactId>application1.biz</artifactId>
 		</dependency>
         <dependency>
-            <groupId>cn.com.chinabank.shared</groupId>
-            <artifactId>applications.test</artifactId>
+            <groupId>org.eclipse.jetty.diy</groupId>
+            <artifactId>jetty.server</artifactId>
         </dependency>
 		
 		<dependency>

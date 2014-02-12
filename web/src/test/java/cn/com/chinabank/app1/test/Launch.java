@@ -1,6 +1,7 @@
 package cn.com.chinabank.app1.test;
 
-import cn.com.chinabank.shared.launch.Main;
+
+import org.eclipse.jetty.diy.launch.Main;
 
 /**
  * Created with IntelliJ IDEA.

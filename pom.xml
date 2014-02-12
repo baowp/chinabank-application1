@@ -22,7 +22,6 @@
 		<spring.version>3.2.2.RELEASE</spring.version>
         <dubbo.version>2.4.10</dubbo.version>
 		<chinabank.share.version>1.0.0</chinabank.share.version>
-        <chinabank.test.version>1.0.0</chinabank.test.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -48,9 +47,9 @@
 				<version>${chinabank.share.version}</version>
 			</dependency>
             <dependency>
-                <groupId>cn.com.chinabank.shared</groupId>
-                <artifactId>applications.test</artifactId>
-                <version>${chinabank.test.version}</version>
+                <groupId>org.eclipse.jetty.diy</groupId>
+                <artifactId>jetty.server</artifactId>
+                <version>1.0.0</version>
                 <scope>test</scope>
             </dependency>
 			
