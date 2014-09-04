@@ -10,9 +10,11 @@
 	<!-- dubbo -->
 	<dubbo:application name="application1"/>
 	<dubbo:registry id="dubboRegistry" address="${dubbo.registry.address}"/>
+
+    <dubbo:service interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService"/>
 	
 	<!--<dubbo:annotation package="cn.com.chinabank.app1" />-->
-    <dubbo:service protocol="learn" interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService" version="1.0.0"/>
+   <!-- <dubbo:service protocol="learn" interface="cn.com.chinabank.shared.service.DubboSampleService" ref="dubboSampleService" version="1.0.0"/>-->
 
     <dubbo:service interface="cn.com.chinabank.shared.service.CallbackService" ref="callbackService" connections="1" callbacks="1000">
         <dubbo:method name="addListener">
