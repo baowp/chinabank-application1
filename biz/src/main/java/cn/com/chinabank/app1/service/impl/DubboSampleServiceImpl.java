@@ -10,8 +10,7 @@ import java.io.Serializable;
 @Service("dubboSampleService")
 public class DubboSampleServiceImpl implements DubboSampleService {
 
-    private final org.apache.log4j.Logger logger = org.apache.log4j.Logger
-            .getLogger(this.getClass());
+    private final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(getClass());
 
     @Override
     public Serializable execute(String s) {
