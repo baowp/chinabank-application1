@@ -20,7 +20,7 @@
 
 	<properties>
 		<spring.version>3.2.2.RELEASE</spring.version>
-        <dubbo.version>2.5.3</dubbo.version>
+        <dubbo.version>2.6.9</dubbo.version>
 		<chinabank.share.version>1.0.0</chinabank.share.version>
 	</properties>
 	<dependencyManagement>
